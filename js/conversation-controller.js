@@ -25,6 +25,14 @@ import { closeAttachments } from './text-field-controller.js'
  * @returns {void}
  */
 export const formatChats = (element, id) => {
+  const containerLeft = document.getElementById('left')
+  const containerRight = document.getElementById('right')
+
+  if (containerRight.classList.contains('sm-hide')) {
+    containerRight.classList.remove('sm-hide')
+    containerLeft.classList.add('sm-hide')
+  }
+
   if (getEditingChat() || getReplyingChat()) {
     const chatContainer = document.getElementById('chat-container')
 
@@ -74,7 +82,7 @@ export const formatChats = (element, id) => {
   setIId(id)
 
   const splash = document.getElementById('splash')
-  const heading = document.getElementById('heading')
+  const heading = document.getElementById('heading-components')
   const chat = document.getElementById('chat-container')
 
   if (splash) {
@@ -100,6 +108,23 @@ export const formatChats = (element, id) => {
   const rooms = document.querySelectorAll('#room > div')
   rooms.forEach(room => room.classList.remove('active'))
   element.classList.add('active')
+}
+
+/**
+ * Resets the chat view to its default state, showing the list of conversations and hiding the chat messages.
+ * 
+ * @returns {void}
+ */
+
+export const unformatChats = () => {
+  const containerLeft = document.getElementById('left')
+  const containerRight = document.getElementById('right')
+
+  containerLeft.classList.remove('sm-hide')
+  containerRight.classList.add('sm-hide')
+  
+  const rooms = document.querySelectorAll('#room > div')
+  rooms.forEach(room => room.classList.remove('active'))
 }
 
 export const createContentElement = (content, chatDiv) => {

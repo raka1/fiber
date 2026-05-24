@@ -20,7 +20,7 @@ import {
 } from './cache.js'
 import { roomSearch, roomInsert } from './room-controller.js'
 import { focusOnLastRange, enter, addText } from './text-field-controller.js'
-import { formatChats } from './conversation-controller.js'
+import { formatChats, unformatChats } from './conversation-controller.js'
 import { selectEmojiCategory, searchEmojiInput, closeEmoji } from './emoji-controller.js'
 import { contentAudio } from './audio-controller.js'
 import { contentImage } from './image-controller.js'
@@ -251,6 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { once: true })
 
   getGemoji()
+
+  const backButton = document.querySelector('#heading div[back]')
+
+  backButton.addEventListener('click', unformatChats)
 })
 
 // For change name

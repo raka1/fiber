@@ -69,10 +69,25 @@ html, body {
     visibility cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
 }
 
+@media only screen and (max-width: 768px) {
+  .sm-hide {
+    display: none !important;
+  }
+
+  .container {
+    grid-template-columns: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sm-show {
+    display: none !important;
+  }
+}
+
 /* start of left */
 
 .container #left {
-  display: block;
   background-color: var(--cloud);
   border-right: 1px solid var(--silver);
   padding: .5em;
@@ -183,6 +198,12 @@ html, body {
 
 /* start of right */
 
+/* @media only screen and (max-width: 768px) {
+  .container #right #splash {
+    display: none;
+  }
+} */
+
 .container #right {
   position: relative;
 }
@@ -231,7 +252,27 @@ html, body {
   cursor: default;
 }
 
-.container #heading > div[avatar] {
+.container #heading > div[back] {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  margin-right: 5px;
+  display: inline-block;
+  transform: translateY(-17.5px);
+}
+
+.container #heading > div[back]:hover {
+  background-color: var(--silver);
+}
+
+.container #heading-components {
+  display: inline-block;
+}
+
+.container #heading-components > div[avatar] {
   height: 50px;
   width: 50px;
   background-size: contain;
@@ -240,7 +281,7 @@ html, body {
   margin-right: 10px;
 }
 
-.container #heading > div[name] {
+.container #heading-components > div[name] {
   display: inline-block;
   vertical-align: middle;
   transform: translateY(-20px);
