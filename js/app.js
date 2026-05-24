@@ -56,7 +56,10 @@ const cancelEdit = () => {
 
   // Adjust chat container height
   setAdditionalChatContainerHeight(0)
-  chatContainer.style.height = `calc(100vh - 7.925em)`
+  if (CSS.supports('height', '100dvh'))
+    chatContainer.style.height = `calc(100dvh - 7.925em)`
+  else
+    chatContainer.style.height = `calc(100vh - 7.925em)`
 
   // Adjust caption if attachment container exist
   if (uploadAttachment.children.length > 0) {
@@ -92,7 +95,10 @@ const cancelReply = () => {
   // Adjust chat container height
   const additionalHeight = getAdditionalChatContainerHeight() - 2.65
   setAdditionalChatContainerHeight(additionalHeight)
-  chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
+  if (CSS.supports('height', '100dvh'))
+    chatContainer.style.height = `calc(100dvh - 7.925em - ${additionalHeight}em)`
+  else
+    chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
 
   // Adjust caption if attachment container exist
   if (document.getElementById('upload-attachment').children.length > 0) {
@@ -309,7 +315,10 @@ document.querySelector('input#add').addEventListener('change', e => {
   // Adjust chat container height
   const additionalHeight = getAdditionalChatContainerHeight() + 7.45
   setAdditionalChatContainerHeight(additionalHeight)
-  chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
+  if (CSS.supports('height', '100dvh'))
+    chatContainer.style.height = `calc(100dvh - 7.925em - ${additionalHeight}em)`
+  else
+    chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
 
   // Adjust caption if attachment container exist
   if (document.getElementById('editing-caption').style.display != 'none') {

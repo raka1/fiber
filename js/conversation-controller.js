@@ -37,7 +37,10 @@ export const formatChats = (element, id) => {
     const chatContainer = document.getElementById('chat-container')
 
     setAdditionalChatContainerHeight(0)
-    chatContainer.style.height = 'calc(100vh - 7.925em)'
+    if (CSS.supports('height', '100dvh'))
+      chatContainer.style.height = 'calc(100dvh - 7.925em)'
+    else
+      chatContainer.style.height = 'calc(100vh - 7.925em)'
   }
 
   if (getEditingChat()) {
@@ -343,7 +346,10 @@ const editChat = (chatDiv) => {
   if (!getReplyingChat() && !getEditingChat()) {
     const additionalHeight = getAdditionalChatContainerHeight() + 2.65
     setAdditionalChatContainerHeight(additionalHeight)
-    chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
+    if (CSS.supports('height', '100dvh'))
+      chatContainer.style.height = `calc(100dvh - 7.925em - ${additionalHeight}em)`
+    else
+      chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
   }
 
   // Hide previous editing caption if exist
@@ -403,7 +409,10 @@ const editChat = (chatDiv) => {
     // Adjust chat container height
     const additionalHeight = getAdditionalChatContainerHeight() + 7.45
     setAdditionalChatContainerHeight(additionalHeight)
-    chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
+    if (CSS.supports('height', '100dvh'))
+      chatContainer.style.height = `calc(100dvh - 7.925em - ${additionalHeight}em)`
+    else
+      chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
 
     const textEditorContainer = document.getElementById('text-editor-container')
     const uploadAttachmentTrackWrapper = document.getElementById('upload-attachment-track-wrapper')
@@ -442,7 +451,10 @@ const replyChat = (chatDiv) => {
   if (!getEditingChat() && !getReplyingChat()) {
     const additionalHeight = getAdditionalChatContainerHeight() + 2.65
     setAdditionalChatContainerHeight(additionalHeight)
-    chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
+    if (CSS.supports('height', '100dvh'))
+      chatContainer.style.height = `calc(100dvh - 7.925em - ${additionalHeight}em)`
+    else
+      chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
   }
 
   // Hide previous replying caption if exist

@@ -211,7 +211,10 @@ export const enter = () => {
 
   // Set chat container, editing and replying caption height back to default
   setAdditionalChatContainerHeight(0)
-  chatContainer.style.height = 'calc(100vh - 7.925em)'
+  if (CSS.supports('height', '100dvh'))
+    chatContainer.style.height = 'calc(100dvh - 7.925em)'
+  else
+    chatContainer.style.height = 'calc(100vh - 7.925em)'
   editingCaption.style.bottom = '3.75em'
   replyingCaption.style.bottom = '3.75em'
 
@@ -351,7 +354,10 @@ export const closeAttachments = () => {
   // Adjust chat container height
   const additionalHeight = getAdditionalChatContainerHeight() - 7.45
   setAdditionalChatContainerHeight(additionalHeight)
-  chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
+  if (CSS.supports('height', '100dvh'))
+     chatContainer.style.height = `calc(100dvh - 7.925em - ${additionalHeight}em)`
+  else
+    chatContainer.style.height = `calc(100vh - 7.925em - ${additionalHeight}em)`
 
   uploadAttachment.classList.add('hide')
 
