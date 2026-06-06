@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // For change name
 document.querySelector('input#name').addEventListener('input', e => {
   document.querySelectorAll('.my-name').forEach(element => {
-    if (e.target.value == '') element.textContent = 'Literature'
+    if (e.target.value == '') element.textContent = 'Rondeletia'
     else element.textContent = e.target.value
   })
 })

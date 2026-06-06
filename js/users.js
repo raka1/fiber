@@ -2,8 +2,8 @@ export const users = {
   "users": [
     {
       "id": 1,
-      "name": "Literature",
-      "avatar": "/images/literature.jpg"
+      "name": "Rondeletia",
+      "avatar": "/images/rondeletia.jpg"
     },
     {
       "id": 2,
