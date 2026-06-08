@@ -510,6 +510,26 @@ div#preview-delete-chat > div > div[chat] > div[content] > div[video-wrapper] {
   max-width: 25em;
 }
 
+@media only screen and (max-width: 768px) {
+  .container #chat-container > div > div > div[chat] > div[content],
+  div#preview-delete-chat > div > div[chat] > div[content] {
+    max-width: calc(100vw - 6em);
+    width: calc(100vw - 6em);
+  }
+
+  .container #chat-container > div > div > div[chat] > div[content] img,
+  .container #chat-container > div > div > div[chat] > div[content] video,
+  .container #chat-container > div > div > div[chat] > div[content] > div[audio-wrapper],
+  .container #chat-container > div > div > div[chat] > div[content] > div[video-wrapper],
+  div#preview-delete-chat > div > div[chat] > div[content] img,
+  div#preview-delete-chat > div > div[chat] > div[content] video,
+  div#preview-delete-chat > div > div[chat] > div[content] > div[audio-wrapper],
+  div#preview-delete-chat > div > div[chat] > div[content] > div[video-wrapper] {
+    max-width: calc(100vw - 6em);
+    width: calc(100vw - 6em);
+  }
+}
+
 /* start of audio and video properties */
 .container #chat-container > div > div > div[chat] > div[content] > div[audio-wrapper],
 .container #chat-container > div > div > div[chat] > div[content] > div[video-wrapper] {
@@ -919,6 +939,7 @@ img.emoji {
   padding: 10px;
   height: 25em;
   width: calc(100% - 20px);
+  max-width: calc(100vw - 3em);
   overflow: auto;
   color: black;
   position: absolute;
