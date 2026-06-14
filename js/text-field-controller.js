@@ -86,6 +86,9 @@ export const addText = (emoji) => {
   selection.removeAllRanges()
   selection.addRange(range)
   lastRange = range
+
+  const inputEvent = new Event('input', { bubbles: true })
+  editable.dispatchEvent(inputEvent)
 }
 
 /**
