@@ -514,7 +514,6 @@ div#preview-delete-chat > div > div[chat] > div[content] > div[video-wrapper] {
   .container #chat-container > div > div > div[chat] > div[content],
   div#preview-delete-chat > div > div[chat] > div[content] {
     max-width: calc(100vw - 6em);
-    width: calc(100vw - 6em);
   }
 
   .container #chat-container > div > div > div[chat] > div[content] img,
@@ -526,7 +525,6 @@ div#preview-delete-chat > div > div[chat] > div[content] > div[video-wrapper] {
   div#preview-delete-chat > div > div[chat] > div[content] > div[audio-wrapper],
   div#preview-delete-chat > div > div[chat] > div[content] > div[video-wrapper] {
     max-width: calc(100vw - 6em);
-    width: calc(100vw - 6em);
   }
 }
 
